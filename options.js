@@ -1,6 +1,7 @@
     let slides  = document.querySelectorAll('.swiper-slide');
     let showAll = document.querySelector('.show-all__link');
     let wrapper = document.querySelector('.swiper-wrapper');
+    let size =  wrapper.style.height;
     function show_first () {  
         if (showAll.dataset.all=="false") {
             wrapper.style.height='100%';
@@ -8,7 +9,7 @@
             showAll.dataset.all="true";
             showAll.textContent='Скрыть';
         } else {
-            wrapper.style.height='166px';
+            wrapper.style.height=size;
             showAll.dataset.all="false";
             showAll.textContent='Показать все';
         };
