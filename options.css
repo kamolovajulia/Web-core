@@ -37,7 +37,7 @@
     letter-spacing: -0.2px;
     text-transform: uppercase;
 }
-main {
+.main {
     padding: 16px;
     box-sizing: border-box;
     background-color: #F8F8F8;
@@ -156,7 +156,7 @@ main {
 .header__title {
     margin-right: auto;
 }
-main {
+.main {
     padding: 24px; 
 }
 .swiper-pagination {
