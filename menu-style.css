@@ -1,32 +1,39 @@
-@font-face {
-    font-family: 'TT Lakes Medium';
-    src: url('fonts/TTLakes-Medium.eot');
-    src: url('fonts/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
-    url('fonts/TTLakes-Medium.woff') format('woff'),
-    url('fonts/TTLakes-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'TT Lakes Bold';
-    src: url('fonts/TTLakes-Bold.eot');
-    src: url('fonts/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
-    url('fonts/TTLakes-Bold.woff') format('woff'),
-    url('fonts/TTLakes-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 * {
     margin: 0;
+}
+.aside-body {
+    opacity: 1;
+    background: #FFF;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    /* width: -webkit-fill-available;
+    height: auto; */
+    display: flex;
+    flex-direction: column;
+}
+.aside-container {
+    /* display: flex;
+    flex-direction: column; */
+    /* opacity: 0.9605; */
+    /* opacity: 0.04; */
+    background: transparent;
+
 }
 .aside-body__container {
     padding: 23px 24px 32px 24px;
     width: 320px;
     box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
+    /* height: -webkit-fill-available; */
     box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.20), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+}
+.aside-body--opacity0 {
+    display: none;
+}
+.aside-body--opacity1{
+    /* opacity: 1; */
+    z-index: 99;
+    opacity: 0.9605;
 }
 .wrapper {
     padding: 0;
@@ -46,7 +53,7 @@
 .wrapper__menu {
     list-style: none;
     padding: 0;
-    margin-bottom: 265px;
+    margin-bottom: 240px;
     /* margin-bottom: 20vh; */
     /* margin-bottom: 9vh; */   
 }
@@ -58,14 +65,14 @@
 .aside-menu__item:last-child {
     margin-bottom: 0;
 }
-.aside-menu__current-item {
+.aside-menu__current-item_medium {
     position: relative;
     display: flex;
     align-content: center;
     justify-content: flex-start;
     margin-left: -24px;
 }
-.aside-menu__current-item .aside-menu__link::before {
+.aside-menu__current-item_medium .aside-menu__link::before {
     content: "";
     background-image: url(img/highlight.svg);
     background-size: 3px 24px;
@@ -76,7 +83,7 @@
     position: absolute;
     transform: scaleY(1.33) scaleX(1.33);   
 }
-.aside-menu__current-item .aside-menu__link {
+.aside-menu__current-item_medium .aside-menu__link {
     color: #7E7E82;
     margin-left: 24px;
 }
@@ -88,11 +95,11 @@
     font-size: 16px;
     line-height: 24px;
 }
-.aside-menu__item:not(.aside-menu__current-item) .aside-menu__link:hover {
+.aside-menu__item:not(.aside-menu__current-item_medium) .aside-menu__link:hover {
     text-decoration: underline;
 }
 .icon {
-    width: 40px;
+    /* width: 40px; */
     height: 40px;
     opacity: 0.9;
     transition: opacity 1.5s, transform 2s;
@@ -182,4 +189,58 @@
 }
 .languages__item:not(.active) .languages__link:hover {
     text-decoration: underline;
+}
+@media (min-width: 1440px) {
+    .aside-body__container {
+        opacity: 1;
+        position: relative;
+        display: flex;
+        height: auto;
+        box-shadow: none;
+       
+    }
+    .icon_close {
+        display: none;
+    }
+    .wrapper {
+        width: 253px;
+        
+    }
+    .wrapper__header {
+        margin-bottom: 37px;
+    }
+    .aside-menu__item {
+        margin-bottom: 28px;
+    }
+    .aside-menu__current-item_medium .aside-menu__link::before {
+        display: none;
+    }
+    .aside-menu__current-item_medium .aside-menu__link{
+        color: #1B1C21;
+    }
+    .aside-menu__current-item_large {
+        position: relative;
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+        margin-left: -24px;
+    }
+    .aside-menu__current-item_large .aside-menu__link::before {
+        content: "";
+        background-image: url(img/highlight.svg);
+        background-size: 3px 24px;
+        background-repeat: no-repeat;
+        width: 3px;
+        height: 24px;
+        margin-left: -24px;
+        position: absolute;
+        transform: scaleY(1.33) scaleX(1.33);   
+    }
+    .aside-menu__current-item_large .aside-menu__link {
+        color: #7E7E82;
+        margin-left: 24px;
+    }
+    .aside-menu__item:not(.aside-menu__current-item_large) .aside-menu__link:hover {
+        text-decoration: underline;
+    }
 }
